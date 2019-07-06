@@ -1,0 +1,12 @@
+# The sequence diagram for Excercise 0.5 - Single page app
+Title: Going to the single page app version of note
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+Server-->Browser: HTML code
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/spa.js
+Server-->Browser: spa.js
+Note over Browser: The browser excutes the js code\n that requests the JSON data from the server
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/data.json
+Server-->Browser: [{{content: "the new note for part0", date: "2019-07-06T13:12:10.356Z"}, ...}]
+Note over Browser: The browser executes the event handler\n that renders notes to display
