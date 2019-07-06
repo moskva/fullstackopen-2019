@@ -1,1 +1,16 @@
-
+# The sequence diagram for Excercise 0.4 - new note
+Title: After Clicking The Save Button To Submit A New Note
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+Note over Server: The server asks the browser to do\n a new HTTP GET request to\n the address defined in the header's Location
+Server-->Browser: Status code 302, URL redirect
+Note over Browser: The browser reload the current page
+Browser->Server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+Server-->Browser: HTML code
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/main.css
+Server-->Browser: main.css
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/main.js
+Server-->Browser: main.js
+Note over Browser: The browser excutes the js code\n that requests the JSON data from the server
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/data.json
+Server-->Browser: [{{content: "the new note for part0", date: "2019-07-06T13:12:10.356Z"}, ...}]
+Note over Browser: The browser executes the event handler\n that renders notes to display
