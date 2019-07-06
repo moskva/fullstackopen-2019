@@ -1,0 +1,7 @@
+# The sequence diagram for Excercise 0.6 - New note
+Title: Submitting a new note at the page of the single page app version
+Note over Browser: The spa.js creates the submitted new note\n and add it to the notes list 
+Note over Browser: The spa.js sends a request\n with a new note as JSON data\n [{content: "the single page app for part0",\n date: "2019-07-06T13:51:12.170Z"}]
+Browser->Server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+Note over Server: The server updates the data.json file\n with new note data
+Server-->Browser: Status code: 201 Created
